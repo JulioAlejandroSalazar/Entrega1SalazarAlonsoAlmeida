@@ -2,22 +2,24 @@
 {% load static %}
 
 
+{% block titulo %}
+    <h1>Autores Miembro</h1>
+    <span class="subheading">Quienes suben contenido y tienen beneficios especiales</span>
+{% endblock %}
+
+
 {% block contenidoQueCambia %}
-
-    Busqueda de autores miembro por nombre <br>
+    <h2>Busqueda de autores miembro por nombre</h2><br>
     {{ mensaje }}
-
 {% endblock %}
 
 
 {% block formulario %}
+    <form action="{% url 'autores_miembro_buscado' %}" method="GET">
 
-<form action="{% url 'autores_miembro_buscado' %}" method="GET">
+        <input type="text" name="nombre" id="nombre">
 
-    <input type="text" name="nombre" id="nombre">
+        <input type="submit" value="Enviar">
 
-    <input type="submit" value="Enviar">
-
-</form>
-
+    </form>
 {% endblock %}

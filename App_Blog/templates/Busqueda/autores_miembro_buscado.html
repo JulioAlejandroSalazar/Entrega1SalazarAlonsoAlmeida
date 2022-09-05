@@ -2,15 +2,18 @@
 {% load static %}
 
 
+{% block titulo %}
+    <h1>Autores Miembro</h1>
+    <span class="subheading">Quienes suben contenido y tienen beneficios especiales</span>
+{% endblock %}
+
+
 {% block contenidoQueCambia %}
-
-    <h1>Autores Miembro Buscados</h1>
-
+    <h2>Autores miembro buscados</h2><br>
 {% endblock %}
 
 
 {% block formulario %}
-
     {% if autores %}
 
         {% for autor in autores %}

@@ -1,16 +1,18 @@
 {% extends "inicio.html" %}
 {% load static %}
 
+{% block titulo %}
+    <h1>Autores</h1>
+    <span class="subheading">Quienes suben contenido</span>
+{% endblock %}
+
 
 {% block contenidoQueCambia %}
-
-    <h1>Autores Buscados</h1>
-
+    <h2>Autores buscados</h2>
 {% endblock %}
 
 
 {% block formulario %}
-
     {% if autores %}
 
         {% for autor in autores %}

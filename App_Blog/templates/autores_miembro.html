@@ -2,23 +2,30 @@
 {% load static %}
 
 
-{% block contenidoQueCambia %}
+{% block boton_busqueda %}
+    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'busqueda_autores_miembro' %}">Buscar Autores Miembro</a></li>
+{% endblock %}
 
+
+{% block titulo %}
     <h1>Autores Miembro</h1>
+    <span class="subheading">Quienes suben contenido y tienen beneficios especiales</span>
+{% endblock %}
 
+
+{% block contenidoQueCambia %}
+    <h2>Agregar autor miembro</h2>
 {% endblock %}
 
 
 {% block formulario %}
+    <form action="{% url 'autores_miembro' %}" method="POST"> {% csrf_token %}
 
-<form action="{% url 'autores_miembro' %}" method="POST"> {% csrf_token %}
+        <table>
+        {{ formulario.as_table }}
+        </table>
 
-    <table>
-    {{ formulario.as_table }}
-    </table>
+        <input type="submit" value="Enviar">
 
-    <input type="submit" value="Enviar">
-
-</form>
-
+    </form>
 {% endblock %}

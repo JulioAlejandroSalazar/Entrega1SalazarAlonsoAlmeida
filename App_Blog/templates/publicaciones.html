@@ -1,24 +1,30 @@
 {% extends "inicio.html" %}
 {% load static %}
 
+{% block boton_busqueda %}
+    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'busqueda_publicaciones' %}">Buscar Publicaciones</a></li>
+{% endblock %}
+
+
+{% block titulo %}
+    <h1>Publicaciones</h1>
+    <span class="subheading">Para el contenido de los autores</span>
+{% endblock %}
+
 
 {% block contenidoQueCambia %}
-
-    <h1>Publicaciones</h1>
-
+    <h2>Agregar publicacion</h2>
 {% endblock %}
 
 
 {% block formulario %}
+    <form action="{% url 'publicaciones' %}" method="POST"> {% csrf_token %}
 
-<form action="{% url 'publicaciones' %}" method="POST"> {% csrf_token %}
+        <table>
+        {{ formulario.as_table }}
+        </table>
 
-    <table>
-    {{ formulario.as_table }}
-    </table>
+        <input type="submit" value="Enviar">
 
-    <input type="submit" value="Enviar">
-
-</form>
-
+    </form>
 {% endblock %}
