@@ -1,0 +1,23 @@
+{% extends "inicio.html" %}
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+    Busqueda de publicaciones por titulo <br>
+    {{ mensaje }}
+
+{% endblock %}
+
+
+{% block formulario %}
+
+<form action="{% url 'publicaciones_buscado' %}" method="GET">
+
+    <input type="text" name="titulo" id="titulo">
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "inicio.html" %}
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+    <h1>Autores Miembro Buscados</h1>
+
+{% endblock %}
+
+
+{% block formulario %}
+
+    {% if autores %}
+
+        {% for autor in autores %}
+            <ul>
+            <li>{{ autor.nombre }} {{ autor.apellido }}</li>
+            </ul>
+        {% endfor %}
+
+    {% else %}
+
+        <p>No se encontraron autores miembro con ese nombre</p>
+
+    {% endif %}
+{% endblock %}

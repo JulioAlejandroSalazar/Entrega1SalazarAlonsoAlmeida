@@ -1,0 +1,27 @@
+{% extends "inicio.html" %}
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+    <h1>Publicaciones Buscadas</h1>
+
+{% endblock %}
+
+
+{% block formulario %}
+
+    {% if publicacion %}
+
+        {% for info in publicacion %}
+            <ul>
+            <li>{{ info.titulo }} {{ info.fecha }}</li>
+            </ul>
+        {% endfor %}
+
+    {% else %}
+
+        <p>No se encontraron autores con ese nombre</p>
+
+    {% endif %}
+{% endblock %}

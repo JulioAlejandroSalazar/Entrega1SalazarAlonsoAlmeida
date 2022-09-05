@@ -1,0 +1,23 @@
+{% extends "inicio.html" %}
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+    Busqueda de autores miembro por nombre <br>
+    {{ mensaje }}
+
+{% endblock %}
+
+
+{% block formulario %}
+
+<form action="{% url 'autores_miembro_buscado' %}" method="GET">
+
+    <input type="text" name="nombre" id="nombre">
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+{% endblock %}
